@@ -20,3 +20,6 @@ print(kobiety)
 cat("\nPodpunkt g:\n")
 dfG <- oceny[oceny["algebra"]>=4.5 | oceny["analiza"]>=4.5 ,]
 print(dfG)
+cat("\nPodpunkt h:\n")
+vecH <- oceny[oceny["analiza"]>=4.5, ]
+print(length(vecH[,1]))
