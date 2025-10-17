@@ -1,0 +1,22 @@
+waga<-read.csv("waga1.csv", header=TRUE, sep=";")
+cat("\nPodpunkt b\n")
+print(head(waga, 5))
+cat("\nPodpunkt c\n")
+str(waga)
+cat("\nPodpunkt d\n")
+print("srednia waga przed studiami")
+print(mean(waga$Waga_przed))
+print("sredni wzrost przed studiami")
+print(mean(waga$Wzrost))
+cat("\nPodpunkt e1\n")
+waga$wskaznik<-apply(waga[,2:3], 1, function(x) x["Waga_przed"] / ((x["Wzrost"])/100)^2)
+print(head(waga,5))
+cat("\nPodpunkt e2\n")
+dfE2 <- waga[waga["plec"] == 0 & waga["wskaznik"] >= 25,]
+print(dfE2)
+cat("\nPodpunkt f\n")
+dfF <- waga[waga["plec"] == 1, ]
+print(dfF)
+cat("\nPodpunkt g\n")
+vecG <- waga[waga["Wzrost"]>175]
+print(length(vecG))
