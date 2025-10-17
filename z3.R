@@ -1,0 +1,22 @@
+mieszkania<-read.csv("mieszkania.csv", header=TRUE, sep=";")
+cat("\nPodpunkt b\n")
+print(head(mieszkania, 6))
+cat("\nPodpunkt c\n")
+str(mieszkania)
+cat("\nPodpunkt d\n")
+cat("\nsredni metraz\n")
+print(mean(mieszkania$Metraz))
+cat("\nsrednia cena\n")
+print(mean(mieszkania$Cena))
+cat("\nPodpunkt e\n")
+mieszkania$cena_za_metr<-apply(mieszkania[,c("Cena", "Metraz")], 1, function(x) x["Cena"]/x["Metraz"])
+print(head(mieszkania, 6))
+cat("\nPodpunkt f\n")
+dfF<-mieszkania[mieszkania["Dzielnica"] == "Psie Pole" & mieszkania["Cena"]<400000, ]
+print(dfF)
+cat("\nPodpunkt g\n")
+dfG<-mieszkania[mieszkania["Dzielnica"] == "Srodmiescie" & mieszkania["Metraz"]>60, ]
+print(dfG)
+cat("\nPodpunkt h\n")
+vecH<-mieszkania[mieszkania["Metraz"]>60 & mieszkania["Cena"]<350000]
+print(length(vecH))
