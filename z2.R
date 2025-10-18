@@ -12,10 +12,10 @@ cat("\nPodpunkt e1\n")
 waga$wskaznik<-apply(waga[,2:3], 1, function(x) x["Waga_przed"] / ((x["Wzrost"])/100)^2)
 print(head(waga,5))
 cat("\nPodpunkt e2\n")
-dfE2 <- waga[waga["plec"] == 0 & waga["wskaznik"] >= 25,]
+dfE2 <- waga[waga["plec"] == 1 & waga["wskaznik"] >= 25,]
 print(dfE2)
 cat("\nPodpunkt f\n")
-dfF <- waga[waga["plec"] == 1, ]
+dfF <- waga[waga["plec"] == 0, ]
 print(dfF)
 cat("\nPodpunkt g\n")
 vecG <- waga[waga["Wzrost"]>175]
