@@ -18,5 +18,5 @@ cat("\nPodpunkt f\n")
 dfF <- waga[waga["plec"] == 0, ]
 print(dfF)
 cat("\nPodpunkt g\n")
-vecG <- waga[waga["Wzrost"]>175]
-print(length(vecG))
+vecG <- sum(waga$Wzrost>175)
+print(vecG)

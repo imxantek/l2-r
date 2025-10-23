@@ -18,5 +18,5 @@ cat("\nPodpunkt g\n")
 dfG<-mieszkania[mieszkania["Dzielnica"] == "Srodmiescie" & mieszkania["Metraz"]>60, ]
 print(dfG)
 cat("\nPodpunkt h\n")
-vecH<-mieszkania[mieszkania["Metraz"]>60 & mieszkania["Cena"]<350000]
-print(length(vecH))
+vecH<-mieszkania$Metraz>60 & mieszkania$Cena<350000
+print(sum(vecH))
